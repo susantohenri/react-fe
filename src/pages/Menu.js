@@ -3,6 +3,7 @@ import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 
 function Menu() {
+    const breadcrumb = []
     return (
         <div className="wrapper">
 
@@ -13,7 +14,7 @@ function Menu() {
             {/* Content Wrapper. Contains page content */}
             <div className="content-wrapper">
                 {/* Content Header (Page header) */}
-                <Header />
+                <Header links={breadcrumb} page_title="" />
                 {/* /.content-header */}
 
                 {/* Main content */}

@@ -14,6 +14,7 @@ function OptionList() {
             })
     }, [])
     const navigate = useNavigate()
+    const breadcrumb = [{text: `Option List`, href: null}]
     return (
         <div className="wrapper">
 
@@ -24,7 +25,7 @@ function OptionList() {
             {/* Content Wrapper. Contains page content */}
             <div className="content-wrapper">
                 {/* Content Header (Page header) */}
-                <Header />
+                <Header links={breadcrumb} page_title="Option" />
                 {/* /.content-header */}
 
                 {/* Main content */}

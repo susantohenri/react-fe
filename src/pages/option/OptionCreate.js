@@ -20,6 +20,7 @@ function OptionCreate() {
             navigate('/Option')
         })
     }
+    const breadcrumb = [{text: `Option List`, href: `/Option`}, {text: `Create Option`, href: null}]
 
     return (
         <div className="wrapper">
@@ -31,7 +32,7 @@ function OptionCreate() {
             {/* Content Wrapper. Contains page content */}
             <div className="content-wrapper">
                 {/* Content Header (Page header) */}
-                <Header />
+                <Header links={breadcrumb} page_title="Option" />
                 {/* /.content-header */}
 
                 {/* Main content */}

@@ -29,6 +29,7 @@ function OptionUpdate() {
                 setOptionValue(user.option_value)
             })
     }, [])
+    const breadcrumb = [{text: `Option List`, href: `/Option`}, {text: `Update Option`, href: null}]
 
     return (
         <div className="wrapper">
@@ -40,7 +41,7 @@ function OptionUpdate() {
             {/* Content Wrapper. Contains page content */}
             <div className="content-wrapper">
                 {/* Content Header (Page header) */}
-                <Header />
+                <Header links={breadcrumb} page_title="Option" />
                 {/* /.content-header */}
 
                 {/* Main content */}

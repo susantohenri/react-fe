@@ -12,6 +12,8 @@ function OptionDelete() {
                 navigate('/Option')
             })
     }
+    const breadcrumb = [{text: `Option List`, href: `/Option`}, {text: `Update Option`, href: `/Option/update/${id}`}, {text: `Delete Option`, href: null}]
+ 
     return (
         <div className="wrapper">
 
@@ -22,7 +24,7 @@ function OptionDelete() {
             {/* Content Wrapper. Contains page content */}
             <div className="content-wrapper">
                 {/* Content Header (Page header) */}
-                <Header />
+                <Header links={breadcrumb} page_title="Option" />
                 {/* /.content-header */}
 
                 {/*-- Main content */}
