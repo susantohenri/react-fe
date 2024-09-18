@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UserList from './pages/UserList.js';
-import UserForm from './pages/UserForm.js';
+import OptionList from './pages/option/OptionList.js';
+import OptionCreate from './pages/option/OptionCreate.js';
+import OptionUpdate from './pages/option/OptionUpdate.js';
+import OptionDelete from './pages/option/OptionDelete.js';
 import Menu from './pages/Menu.js';
 
 function App() {
@@ -8,8 +10,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Menu />}></Route>
-        <Route path="/User" element={<UserList />} />
-        <Route path="/User/create" element={<UserForm />} />
+        <Route path="/Option" element={<OptionList />} />
+        <Route path="/Option/create" element={<OptionCreate />} />
+        <Route path="/Option/update/:id" element={<OptionUpdate />} />
+        <Route path="/Option/delete/:id" element={<OptionDelete />} />
       </Routes>
     </BrowserRouter>
   );

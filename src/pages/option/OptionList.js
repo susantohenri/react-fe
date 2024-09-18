@@ -1,17 +1,19 @@
-import Navbar from '../components/Navbar.js';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Navbar from '../../components/Navbar.js';
+import Header from '../../components/Header.js';
+import Footer from '../../components/Footer.js';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function UserList() {
-    const [users, setUsers] = useState([])
+function OptionList() {
+    const [users, setOptions] = useState([])
     useEffect(() => {
         fetch(`http://playground.local/wp-json/mern/v1/list`)
             .then(r => r.json())
             .then(users => {
-                setUsers(users)
+                setOptions(users)
             })
     }, [])
+    const navigate = useNavigate()
     return (
         <div className="wrapper">
 
@@ -34,7 +36,7 @@ function UserList() {
                                     <div className="card-body">
 
                                         <div className="col-sm-12 text-right">
-                                            <a href="User/create"
+                                            <a href="Option/create"
                                                 className="btn btn-primary"> Add New </a>
                                         </div>
                                         <div className="card-body">
@@ -49,7 +51,7 @@ function UserList() {
                                                 <tbody>
                                                     {users.map((user, id) => {
                                                         const oddEven = 0 == id % 2 ? `even` : `odd`
-                                                        return <tr key={id} className="{oddEven}">
+                                                        return <tr key={id} className="{oddEven}" onClick={e => navigate(`/Option/update/${user.option_id}`)}>
                                                             <td>{user.option_name}</td>
                                                             <td>{user.option_value}</td>
                                                         </tr>
@@ -79,4 +81,4 @@ function UserList() {
     );
 }
 
-export default UserList;
+export default OptionList;

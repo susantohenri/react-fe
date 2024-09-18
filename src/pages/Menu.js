@@ -22,11 +22,11 @@ function Menu() {
                         <div className="row">
 
                             <div className="col-sm-2">
-                                <a href="User">
+                                <a href="Option">
                                     <div className="info-box">
                                         <span className="info-box-icon bg-info"></span>
                                         <div className="info-box-content">
-                                            <span className="info-box-text">User</span>
+                                            <span className="info-box-text">Option</span>
                                         </div>
                                     </div>
                                 </a>

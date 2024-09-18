@@ -1,14 +1,14 @@
-import Navbar from '../components/Navbar.js';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Navbar from '../../components/Navbar.js';
+import Header from '../../components/Header.js';
+import Footer from '../../components/Footer.js';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function UserForm() {
+function OptionCreate() {
     const [optionName, setOptionName] = useState('')
     const [optionValue, setOptionValue] = useState('')
     const navigate = useNavigate()
-    const submitUser = () => {
+    const submitOption = () => {
         let post = {
             method: `POST`,
             body: new FormData()
@@ -17,7 +17,7 @@ function UserForm() {
         post.body.append(`option_name`, `henri-${optionName}`)
         post.body.append(`option_value`, optionValue)
         fetch(`http://playground.local/wp-json/mern/v1/create`, post).then(r => {
-            navigate('/User')
+            navigate('/Option')
         })
     }
 
@@ -41,13 +41,13 @@ function UserForm() {
                             <div className="main-form col-sm-12">
                                 <div className="card card-primary card-outline">
                                     <div className="card-header text-right">
-                                        <button className="btn btn-info btn-save" onClick={submitUser}>Save</button>
+                                        <button className="btn btn-info btn-save" onClick={submitOption}>Save</button>
                                         &nbsp;
-                                        <a href="/User" className="btn btn-warning text-white">Cancel</a>
+                                        <a href="/Option" className="btn btn-warning text-white">Cancel</a>
                                     </div>
                                     <div className="card-body">
 
-                                        <div className="" data-controller="User">
+                                        <div className="" data-controller="Option">
                                             <div className="form-horizontal form-groups">
                                                 <div className="form-group row">
                                                     <label className="col-sm-3 control-label">Option Name</label>
@@ -83,4 +83,4 @@ function UserForm() {
     );
 }
 
-export default UserForm;
+export default OptionCreate;
