@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar.js';
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function OptionCreate() {
@@ -44,7 +44,7 @@ function OptionCreate() {
                                     <div className="card-header text-right">
                                         <button className="btn btn-info btn-save" onClick={submitOption}>Save</button>
                                         &nbsp;
-                                        <a href="/Option" className="btn btn-warning text-white">Cancel</a>
+                                        <Link to="/Option" className="btn btn-warning text-white">Cancel</Link>
                                     </div>
                                     <div className="card-body">
 

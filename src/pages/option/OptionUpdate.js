@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar.js';
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function OptionUpdate() {
@@ -53,9 +53,9 @@ function OptionUpdate() {
                                     <div className="card-header text-right">
                                         <button className="btn btn-info btn-save" onClick={submitOption}>Save</button>
                                         &nbsp;
-                                        <a href={`/Option/delete/${id}`} className="btn btn-danger text-white">Delete</a>
+                                        <Link to={`/Option/delete/${id}`} className="btn btn-danger text-white">Delete</Link>
                                         &nbsp;
-                                        <a href="/Option" className="btn btn-warning text-white">Cancel</a>
+                                        <Link to="/Option" className="btn btn-warning text-white">Cancel</Link>
                                     </div>
                                     <div className="card-body">
 

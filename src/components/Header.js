@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header({ page_title, links }) {
     if (0 < links.length) links = [{
         text: `Home`,
@@ -17,8 +19,7 @@ function Header({ page_title, links }) {
                             {links.map((link, index) => {
                                 let classes = `breadcrumb-item`
                                 if (index == links.length - 1) classes += ` active`
-                                console.log(index, links.length - 1, classes)
-                                return <li key={index} className={classes}><a href={link.href}>{link.text}</a></li>
+                                return <li key={index} className={classes}><Link to={link.href}>{link.text}</Link></li>
                             })}
                         </ol>
                     </div>

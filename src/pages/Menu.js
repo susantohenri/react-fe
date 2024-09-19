@@ -1,9 +1,14 @@
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/slices/cartSlice.js';
 import Navbar from '../components/Navbar.js';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 
 function Menu() {
     const breadcrumb = []
+    const dispatch = useDispatch()
+
     return (
         <div className="wrapper">
 
@@ -23,14 +28,23 @@ function Menu() {
                         <div className="row">
 
                             <div className="col-sm-2">
-                                <a href="Option">
+                                <Link to="Option">
                                     <div className="info-box">
                                         <span className="info-box-icon bg-info"></span>
                                         <div className="info-box-content">
                                             <span className="info-box-text">Option</span>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
+                            </div>
+
+                            <div className="col-sm-2" onClick={() => { dispatch(addToCart({id: 1, qty: 10})) }}>
+                                <div className="info-box">
+                                    <span className="info-box-icon bg-info"></span>
+                                    <div className="info-box-content">
+                                        <span className="info-box-text">Add Cart</span>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

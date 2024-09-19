@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar.js';
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
 function OptionDelete() {
     const { id } = useParams()
@@ -39,7 +39,7 @@ function OptionDelete() {
                                             <h1>Are you sure ?</h1>
                                             <button className="btn btn-danger" onClick={deleteOption}>Yes</button>
                                             &nbsp;
-                                            <a href={`/Option/update/${id}`} className="btn btn-warning text-white">No</a>
+                                            <Link to={`/Option/update/${id}`} className="btn btn-warning text-white">No</Link>
                                         </div>
 
                                     </div>

@@ -2,7 +2,7 @@ import Navbar from '../../components/Navbar.js';
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function OptionList() {
     const [users, setOptions] = useState([])
@@ -37,8 +37,8 @@ function OptionList() {
                                     <div className="card-body">
 
                                         <div className="col-sm-12 text-right">
-                                            <a href="Option/create"
-                                                className="btn btn-primary"> Add New </a>
+                                            <Link to={`/Option/create`}
+                                                className="btn btn-primary"> Add New </Link>
                                         </div>
                                         <div className="card-body">
 
