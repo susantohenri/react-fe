@@ -16,7 +16,7 @@ function Header({ page_title, links }) {
                         <ol className="breadcrumb float-sm-right">
                             {links.map((link, index) => {
                                 let classes = `breadcrumb-item`
-                                if (index == links.length - 1) classes += ` active`
+                                if (index === links.length - 1) classes += ` active`
                                 console.log(index, links.length - 1, classes)
                                 return <li key={index} className={classes}><a href={link.href}>{link.text}</a></li>
                             })}

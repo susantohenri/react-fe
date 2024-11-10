@@ -51,8 +51,8 @@ function OptionList() {
                                                 </thead>
                                                 <tbody>
                                                     {users.map((user, id) => {
-                                                        const oddEven = 0 == id % 2 ? `even` : `odd`
-                                                        return <tr key={id} className="{oddEven}" onClick={e => navigate(`/Option/update/${user.option_id}`)}>
+                                                        const oddEven = 0 !== id % 2 ? `even` : `odd`
+                                                        return <tr key={id} className={oddEven} onClick={e => navigate(`/Option/update/${user.option_id}`)}>
                                                             <td>{user.option_name}</td>
                                                             <td>{user.option_value}</td>
                                                         </tr>
